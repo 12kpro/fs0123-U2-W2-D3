@@ -1,0 +1,19 @@
+@import 'partials/reset';
+@import 'partials/colors';
+@import 'partials/fonts';
+@import 'partials/spacing';
+@import 'partials/animation';
+@import 'partials/mixing';
+@import 'partials/button';
+
+
+body{
+    font-family: $font-family;
+    color: $text
+}
+
+
+@include  spacing($directions, $sizes, 'margin');
+@include  spacing($directions, $sizes);
+
+@include grid(4)
