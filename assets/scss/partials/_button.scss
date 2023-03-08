@@ -1,6 +1,23 @@
 @each $color in $button {
     $i: index($button, $color);
     .btn-#{$i}{
+        display: inline-block;
+        vertical-align: bottom;
+        text-transform: uppercase;
+        border-radius: 5px;
+        cursor: pointer;
+        color: $text;
+        box-shadow: 0 10px 30px darken($color, 20%);
+        border: 3px solid lighten($color, 30%);
         background-color: $color;
+        outline: $color;
+        transition: all 0.3s;
+        position: relative;
+        &:hover {
+          box-shadow: 0 3px 10px $color;
+          background-color: $color;
+          color: $color;
+          z-index: 1;
+        }
     }
 }

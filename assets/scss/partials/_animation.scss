@@ -1,22 +1,22 @@
-/*
-@mixin animation($radius,$shadow,$border: false){
-    animation-name:
-    animation-duration
-    animation-timing-function
-    animation-delay
-    animation-iteration-count
-    animation-direction
-    animation-fill-mode
-    animation-play-state
+
+@mixin animation($name,$duration,$delay,$start,$stop){
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-timing-function: fade-in;
+    animation-delay: $delay;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    @keyframes #{$name} {
+        from {
+          opacity: 0;
+          transform: translateY($start);
+        }
+      
+        to {
+          opacity: 1;
+          transform: translateY($stop);
+        }
+      }
 }
 
-@keyframes slidein {
-  from {
-    transform: translateX(0%);
-  }
-
-  to {
-    transform: translateX(100%);
-  }
-}
-*/
+//@include animation('prova', 2s, 1s, 10px, 20px)

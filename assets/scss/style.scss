@@ -9,10 +9,43 @@
 
 body{
     font-family: $font-family;
-    color: $text
+
 }
-
-
+.navbar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: bisque;
+    & .menu{
+        list-style: none;
+        display: flex;
+    }
+}
+.hero{
+    background-color: $bg_hero;
+    justify-content: center;
+    color: $text;
+    & h1{
+        @include title;
+    }
+    & img{
+        @include floating(20px,0px 12px 16px 4px rgba(0,0,0,0.44),1px solid #0e6cff)
+    }
+}
+.card{
+    position: relative;
+    img{
+        width: 100%;
+        @include floating;
+        @for $i from 1 through 4 {
+            &.fade-in-#{$i}{
+                @include animation(fade-in-#{$i},1s,2s,-100px,0)
+            }
+          }
+    }
+}
 @include  spacing($directions, $sizes, 'margin');
 @include  spacing($directions, $sizes);
 

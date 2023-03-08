@@ -1,4 +1,4 @@
-@mixin floating($radius,$shadow,$border: false){
+@mixin floating($radius: 5px,$shadow: 0px 12px 16px 0px rgba(0,0,0,0.2),$border: false){
     border-radius: $radius;
     box-shadow: $shadow;
     @if($border){
@@ -7,12 +7,19 @@
 }
 
 @mixin grid($n: 1){
-    .grid{
+    .container{
+        max-width: 960px;
+        margin-inline: auto;
+    }
+    .row{
         display: flex;
+        flex-wrap: wrap;
+        
     }
     @for $i from 0 to $n {
         .col-#{calc($i + 1)}{
             flex-basis: calc(100%/($n - $i));
+            flex-shrink: 0;
         }
       }
 }
